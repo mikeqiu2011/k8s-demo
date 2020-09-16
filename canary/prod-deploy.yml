@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+        env: prod
+    spec:
+      containers:
+        - name: k8s-demo
+          image: mikeqiu2011/node-hostname:v1
+          ports:
+            - name: nodejs-port
+              containerPort: 3000

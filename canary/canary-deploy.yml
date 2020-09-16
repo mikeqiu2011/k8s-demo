@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: canary-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+        env: canary
+    spec:
+      containers:
+        - name: k8s-demo
+          image: mikeqiu2011/node-hostname:v2
+          ports:
+            - name: nodejs-port
+              containerPort: 3000
