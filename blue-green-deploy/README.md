@@ -1,6 +1,6 @@
 command example
 
-'''
+```
 alias k=kubectl
 export IP=1.1.1.1
 
@@ -17,4 +17,4 @@ curl $IP:31001
 k apply -f green-service.yml
 curl $IP:31001
 while true; do curl \$IP:31001; echo; sleep 1; done
-'''
+```
