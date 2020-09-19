@@ -1,3 +1,6 @@
+# command example
+
+```
 alias k=kubectl
 
 k apply -f prod-deploy.yml --record
@@ -15,3 +18,4 @@ k rollout status deploy prod-deploy
 
 k rollout history
 k rollout undo deploy prod-deploy --to-revision=2
+```
